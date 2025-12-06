@@ -256,10 +256,10 @@ function ComponentVaultInner() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-950 pointer-events-none" />
+        <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent ${isDark ? 'to-zinc-950' : 'to-gray-50'} pointer-events-none`} />
         <div className={`absolute inset-0 ${theme.gradient} opacity-30 blur-3xl`} />
         <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-6">
+          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'} backdrop-blur-sm border mb-6`}>
             <Star className="w-4 h-4 text-amber-500" />
             <span className="text-sm">Premium SaaS Components</span>
           </div>
@@ -274,7 +274,7 @@ function ComponentVaultInner() {
             </button>
             <button 
               onClick={() => window.open('https://github.com/Zubimendi/novaSAAS-ui', '_blank')}
-              className={`px-6 py-3 rounded-lg ${theme.surface} ${theme.border} border hover:bg-white/5 transition-all`}
+              className={`px-6 py-3 rounded-lg ${theme.surface} ${theme.border} border ${isDark ? 'hover:bg-white/5' : 'hover:bg-black/5'} transition-all`}
             >
               View on GitHub
             </button>
@@ -285,10 +285,10 @@ function ComponentVaultInner() {
       {/* Stats Preview */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <StatsCard title="Total Revenue" value="$45,231" change="+20.1%" trend="up" />
-          <StatsCard title="Active Users" value="2,345" change="+12.5%" trend="up" />
-          <StatsCard title="Conversion Rate" value="3.2%" change="-2.4%" trend="down" />
-          <StatsCard title="Avg. Order Value" value="$89.50" change="+8.2%" trend="up" />
+          <StatsCard title="Total Revenue" value="$0" change="+0%" trend="up" />
+          <StatsCard title="Active Users" value="0" change="+0%" trend="up" />
+          <StatsCard title="Components" value="15" change="+15" trend="up" />
+          <StatsCard title="Themes" value="4" change="+4" trend="up" />
         </div>
       </section>
 
@@ -372,7 +372,7 @@ function ComponentVaultInner() {
                   </div>
                 }
               >
-                <div className="h-24 rounded-lg bg-zinc-500/10 border border-zinc-500/10 flex items-center justify-center">
+                <div className={`h-24 rounded-lg ${isDark ? 'bg-zinc-500/10 border-zinc-500/10' : 'bg-gray-500/10 border-gray-500/10'} border flex items-center justify-center`}>
                   <span className="text-sm opacity-50">Content Placeholder</span>
                 </div>
               </Card>

@@ -22,15 +22,15 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
 
   const baseStyles = "inline-flex items-center justify-center font-medium rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
-    primary: `bg-gradient-to-r ${theme.primary} text-white hover:opacity-90 shadow-lg shadow-indigo-500/20`,
-    secondary: `${theme.surface} ${theme.text} hover:bg-zinc-800 border ${theme.border}`,
-    outline: `bg-transparent border ${theme.border} ${theme.text} hover:bg-zinc-800/50`,
-    ghost: `bg-transparent ${theme.text} hover:bg-zinc-800/50`,
+    primary: `bg-gradient-to-r ${theme.primary} text-white hover:opacity-90 shadow-lg shadow-violet-500/20`,
+    secondary: `${theme.surface} ${theme.text} ${isDark ? 'hover:bg-zinc-800' : 'hover:bg-gray-100'} border ${theme.border}`,
+    outline: `bg-transparent border ${theme.border} ${theme.text} ${isDark ? 'hover:bg-zinc-800/50' : 'hover:bg-gray-100'}`,
+    ghost: `bg-transparent ${theme.text} ${isDark ? 'hover:bg-zinc-800/50' : 'hover:bg-gray-100'}`,
     danger: "bg-rose-500 text-white hover:bg-rose-600 shadow-lg shadow-rose-500/20",
   };
 

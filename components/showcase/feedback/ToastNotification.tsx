@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Check, X, Bell, Sparkles } from "lucide-react";
 import { useTheme } from "../../theme/ThemeContext";

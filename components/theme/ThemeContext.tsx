@@ -1,10 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
-import { themes } from "./themes";
-
-type ThemeKey = keyof typeof themes;
-
-type Theme = typeof themes[ThemeKey];
+import { themes, themesLight, ThemeKey, Theme } from "./themes";
 
 interface ThemeContextProps {
   theme: Theme;
@@ -19,7 +15,9 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeKey>("midnight");
   const [isDark, setIsDark] = useState(true);
-  const theme = themes[currentTheme];
+  
+  // Select theme based on dark/light mode
+  const theme = isDark ? themes[currentTheme] : themesLight[currentTheme];
 
   return (
     <ThemeContext.Provider

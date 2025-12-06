@@ -1,4 +1,5 @@
-export const themes = {
+// Dark theme variants
+const darkThemes = {
   midnight: {
     name: "Midnight Purple",
     primary: "from-violet-600 to-purple-600",
@@ -60,3 +61,73 @@ export const themes = {
     gradient: "bg-gradient-to-br from-amber-600/20 to-orange-600/20",
   },
 } as const;
+
+// Light theme variants
+const lightThemes = {
+  midnight: {
+    name: "Midnight Purple",
+    primary: "from-violet-600 to-purple-600",
+    primarySolid: "bg-violet-600",
+    secondary: "from-pink-600 to-rose-600",
+    accent: "bg-violet-500",
+    bg: "bg-gray-50",
+    surface: "bg-white",
+    border: "border-gray-200",
+    text: "text-gray-900",
+    textMuted: "text-gray-500",
+    hover: "hover:bg-gray-100",
+    ring: "ring-violet-500",
+    gradient: "bg-gradient-to-br from-violet-600/10 to-purple-600/10",
+  },
+  ocean: {
+    name: "Ocean Breeze",
+    primary: "from-sky-600 to-cyan-600",
+    primarySolid: "bg-sky-600",
+    secondary: "from-cyan-600 to-teal-600",
+    accent: "bg-sky-500",
+    bg: "bg-slate-50",
+    surface: "bg-white",
+    border: "border-slate-200",
+    text: "text-slate-900",
+    textMuted: "text-slate-500",
+    hover: "hover:bg-slate-100",
+    ring: "ring-sky-500",
+    gradient: "bg-gradient-to-br from-sky-600/10 to-cyan-600/10",
+  },
+  forest: {
+    name: "Forest Green",
+    primary: "from-emerald-600 to-green-600",
+    primarySolid: "bg-emerald-600",
+    secondary: "from-green-600 to-teal-600",
+    accent: "bg-emerald-500",
+    bg: "bg-neutral-50",
+    surface: "bg-white",
+    border: "border-neutral-200",
+    text: "text-neutral-900",
+    textMuted: "text-neutral-500",
+    hover: "hover:bg-neutral-100",
+    ring: "ring-emerald-500",
+    gradient: "bg-gradient-to-br from-emerald-600/10 to-green-600/10",
+  },
+  sunset: {
+    name: "Sunset Amber",
+    primary: "from-amber-600 to-orange-600",
+    primarySolid: "bg-amber-600",
+    secondary: "from-orange-600 to-red-600",
+    accent: "bg-amber-500",
+    bg: "bg-stone-50",
+    surface: "bg-white",
+    border: "border-stone-200",
+    text: "text-stone-900",
+    textMuted: "text-stone-500",
+    hover: "hover:bg-stone-100",
+    ring: "ring-amber-500",
+    gradient: "bg-gradient-to-br from-amber-600/10 to-orange-600/10",
+  },
+} as const;
+
+export const themes = darkThemes;
+export const themesLight = lightThemes;
+
+export type ThemeKey = keyof typeof themes;
+export type Theme = typeof themes[ThemeKey] | typeof themesLight[ThemeKey];

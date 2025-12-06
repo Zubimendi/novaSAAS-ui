@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useTheme } from "../../theme/ThemeContext";
 
 export const Tabs = () => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const [activeTab, setActiveTab] = useState("account");
 
   const tabs = [
@@ -21,8 +21,10 @@ export const Tabs = () => {
             onClick={() => setActiveTab(tab.id)}
             className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${
               activeTab === tab.id
-                ? `bg-zinc-800 text-white shadow-sm`
-                : `${theme.textMuted} hover:text-white`
+                ? isDark 
+                  ? `bg-zinc-700 text-white shadow-sm` 
+                  : `bg-gray-200 text-gray-900 shadow-sm`
+                : `${theme.textMuted} ${isDark ? 'hover:text-white' : 'hover:text-gray-900'}`
             }`}
           >
             {tab.label}

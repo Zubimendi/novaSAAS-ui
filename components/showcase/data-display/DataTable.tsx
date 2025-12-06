@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import { useTheme } from "../../theme/ThemeContext";
 
 export const DataTable: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const data = [
     { id: 1, name: "Olivia Martin", email: "olivia@example.com", status: "Active", amount: "$1,234" },
     { id: 2, name: "Jackson Lee", email: "jackson@example.com", status: "Pending", amount: "$892" },
@@ -33,7 +34,7 @@ export const DataTable: React.FC = () => {
                       ? "bg-emerald-500/10 text-emerald-500"
                       : row.status === "Pending"
                       ? "bg-amber-500/10 text-amber-500"
-                      : "bg-zinc-500/10 text-zinc-500"
+                      : isDark ? "bg-zinc-500/10 text-zinc-500" : "bg-gray-500/10 text-gray-500"
                   }`}>{row.status}</span>
                 </td>
                 <td className={`py-3 px-4 font-medium ${theme.text}`}>{row.amount}</td>

@@ -1,10 +1,9 @@
-
 "use client";
 import React from "react";
 import { useTheme } from "../../theme/ThemeContext";
 
 export const LoginForm: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   return (
     <div className="space-y-4 w-full max-w-sm">
       <div>
@@ -12,7 +11,7 @@ export const LoginForm: React.FC = () => {
         <input
           type="email"
           placeholder="you@example.com"
-          className={`w-full px-4 py-2.5 rounded-lg ${theme.surface} ${theme.border} border ${theme.text} placeholder-zinc-500 focus:outline-none focus:ring-2 ${theme.ring} transition-all`}
+          className={`w-full px-4 py-2.5 rounded-lg ${theme.surface} ${theme.border} border ${theme.text} ${isDark ? 'placeholder-zinc-500' : 'placeholder-gray-400'} focus:outline-none focus:ring-2 ${theme.ring} transition-all`}
         />
       </div>
       <div>
@@ -20,7 +19,7 @@ export const LoginForm: React.FC = () => {
         <input
           type="password"
           placeholder="••••••••"
-          className={`w-full px-4 py-2.5 rounded-lg ${theme.surface} ${theme.border} border ${theme.text} placeholder-zinc-500 focus:outline-none focus:ring-2 ${theme.ring} transition-all`}
+          className={`w-full px-4 py-2.5 rounded-lg ${theme.surface} ${theme.border} border ${theme.text} ${isDark ? 'placeholder-zinc-500' : 'placeholder-gray-400'} focus:outline-none focus:ring-2 ${theme.ring} transition-all`}
         />
       </div>
       <div className="flex items-center justify-between">

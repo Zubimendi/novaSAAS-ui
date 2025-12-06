@@ -17,7 +17,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   size = "md",
   status 
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
 
   const sizes = {
     sm: "w-8 h-8 text-xs",
@@ -28,14 +28,14 @@ export const Avatar: React.FC<AvatarProps> = ({
 
   const statusColors = {
     online: "bg-emerald-500",
-    offline: "bg-zinc-500",
+    offline: isDark ? "bg-zinc-500" : "bg-gray-400",
     busy: "bg-rose-500",
     away: "bg-amber-500",
   };
 
   return (
     <div className="relative inline-block">
-      <div className={`relative flex items-center justify-center overflow-hidden rounded-full bg-zinc-800 ${sizes[size]} ring-2 ring-white/10`}>
+      <div className={`relative flex items-center justify-center overflow-hidden rounded-full ${isDark ? 'bg-zinc-800' : 'bg-gray-200'} ${sizes[size]} ${isDark ? 'ring-2 ring-white/10' : 'ring-2 ring-black/5'}`}>
         {src ? (
           <img
             src={src}
@@ -47,7 +47,7 @@ export const Avatar: React.FC<AvatarProps> = ({
         )}
       </div>
       {status && (
-        <span className={`absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ring-2 ring-zinc-950 ${statusColors[status]}`} />
+        <span className={`absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full ${isDark ? 'ring-2 ring-zinc-950' : 'ring-2 ring-white'} ${statusColors[status]}`} />
       )}
     </div>
   );

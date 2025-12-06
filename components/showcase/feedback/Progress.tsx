@@ -15,7 +15,7 @@ export const Progress: React.FC<ProgressProps> = ({
   showLabel = false,
   size = "md" 
 }) => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const percentage = Math.min(100, Math.max(0, (value / max) * 100));
 
   const heights = {
@@ -32,7 +32,7 @@ export const Progress: React.FC<ProgressProps> = ({
           <span className={`text-sm font-medium ${theme.textMuted}`}>{Math.round(percentage)}%</span>
         </div>
       )}
-      <div className={`w-full bg-zinc-800 rounded-full overflow-hidden ${heights[size]}`}>
+      <div className={`w-full ${isDark ? 'bg-zinc-800' : 'bg-gray-200'} rounded-full overflow-hidden ${heights[size]}`}>
         <div
           className={`h-full rounded-full bg-gradient-to-r ${theme.primary} transition-all duration-500 ease-out`}
           style={{ width: `${percentage}%` }}

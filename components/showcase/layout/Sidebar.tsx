@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Home, BarChart2, Users, Settings, HelpCircle, LogOut } from "lucide-react";
+import { Home, BarChart2, Users, Settings, LogOut } from "lucide-react";
 import { useTheme } from "../../theme/ThemeContext";
 
 export const Sidebar = () => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   
   const menuItems = [
     { icon: Home, label: "Dashboard", active: true },
@@ -30,8 +30,10 @@ export const Sidebar = () => {
             key={index}
             className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
               item.active
-                ? `bg-zinc-800 ${theme.text}`
-                : `${theme.textMuted} hover:text-zinc-100 hover:bg-zinc-800/50`
+                ? isDark 
+                  ? `bg-zinc-700 ${theme.text}` 
+                  : `bg-gray-200 ${theme.text}`
+                : `${theme.textMuted} ${isDark ? 'hover:text-zinc-100 hover:bg-zinc-800/50' : 'hover:text-gray-900 hover:bg-gray-100'}`
             }`}
           >
             <item.icon className="w-4 h-4" />
@@ -41,7 +43,7 @@ export const Sidebar = () => {
       </div>
 
       <div className={`p-4 border-t ${theme.border}`}>
-        <button className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium ${theme.textMuted} hover:text-red-400 hover:bg-red-500/10 transition-colors`}>
+        <button className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium ${theme.textMuted} hover:text-red-500 hover:bg-red-500/10 transition-colors`}>
           <LogOut className="w-4 h-4" />
           Sign Out
         </button>

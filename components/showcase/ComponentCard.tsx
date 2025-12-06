@@ -18,7 +18,7 @@ export const ComponentCard: React.FC<ComponentCardProps> = ({ title, description
 
   return (
     <div className={`rounded-xl ${theme.surface} ${theme.border} border backdrop-blur-sm overflow-hidden`}>
-      <div className="p-6 border-b border-zinc-800">
+      <div className={`p-6 border-b ${theme.border}`}>
         <div className="flex items-start justify-between mb-2">
           <div>
             <h3 className={`text-lg font-semibold ${theme.text} mb-1`}>{title}</h3>

@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import { useTheme } from "../../theme/ThemeContext";
 
 export const Modal = () => {
-  const { theme } = useTheme();
+  const { theme, isDark } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ export const Modal = () => {
           <div className={`relative w-full max-w-md p-6 rounded-xl ${theme.surface} ${theme.border} border shadow-2xl animate-in zoom-in-95 duration-200`}>
             <button
               onClick={() => setIsOpen(false)}
-              className={`absolute top-4 right-4 p-1 rounded-lg ${theme.hover} ${theme.textMuted} hover:text-white transition-colors`}
+              className={`absolute top-4 right-4 p-1 rounded-lg ${theme.hover} ${theme.textMuted} ${isDark ? 'hover:text-white' : 'hover:text-gray-900'} transition-colors`}
             >
               <X className="w-4 h-4" />
             </button>
@@ -37,7 +37,7 @@ export const Modal = () => {
                 <input
                   type="text"
                   defaultValue="Pedro Duarte"
-                  className={`w-full px-3 py-2 rounded-lg bg-zinc-950/50 ${theme.border} border ${theme.text} focus:outline-none focus:ring-2 focus:ring-violet-500/50`}
+                  className={`w-full px-3 py-2 rounded-lg ${isDark ? 'bg-zinc-950/50' : 'bg-gray-100'} ${theme.border} border ${theme.text} focus:outline-none focus:ring-2 focus:ring-violet-500/50`}
                 />
               </div>
               <div className="space-y-2">
@@ -45,7 +45,7 @@ export const Modal = () => {
                 <input
                   type="text"
                   defaultValue="@peduarte"
-                  className={`w-full px-3 py-2 rounded-lg bg-zinc-950/50 ${theme.border} border ${theme.text} focus:outline-none focus:ring-2 focus:ring-violet-500/50`}
+                  className={`w-full px-3 py-2 rounded-lg ${isDark ? 'bg-zinc-950/50' : 'bg-gray-100'} ${theme.border} border ${theme.text} focus:outline-none focus:ring-2 focus:ring-violet-500/50`}
                 />
               </div>
             </div>
