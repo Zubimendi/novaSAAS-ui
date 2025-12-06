@@ -52,7 +52,7 @@ npx novasaas list
 |----------|-----------|
 | **Inputs** | Button, Switch |
 | **Data Display** | Badge, Avatar, StatsCard, DataTable |
-| **Layout** | Card, Sidebar |
+| **Layout** | Card, Sidebar, ScrollArea, Separator |
 | **Feedback** | Alert, Progress, Modal, Toast |
 | **Navigation** | Tabs |
 | **Forms** | LoginForm |

@@ -4,6 +4,22 @@
   "version": "1.0.0",
   "components": [
     {
+      "name": "scroll-area",
+      "category": "layout",
+      "description": "Custom scrollable area with styled scrollbars",
+      "dependencies": [],
+      "files": ["components/ui/scroll-area.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "separator",
+      "category": "layout",
+      "description": "Visual divider between content",
+      "dependencies": [],
+      "files": ["components/ui/separator.tsx"],
+      "registryDependencies": []
+    },
+    {
       "name": "button",
       "category": "inputs",
       "description": "Versatile button component with multiple variants and states",

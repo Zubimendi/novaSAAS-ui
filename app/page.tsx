@@ -201,8 +201,8 @@ const useCopyToClipboard = () => {
 
 // Inner component that consumes the theme context
 function NovaSaasInner() {
-  const { theme, currentTheme, setCurrentTheme, isDark, setIsDark } =
-    useTheme();
+  const { theme, currentTheme, setCurrentTheme, isDark, setIsDark } = useTheme();
+  const { copied, copy } = useCopyToClipboard();
   const [showThemeMenu, setShowThemeMenu] = useState(false);
 
   return (
@@ -297,6 +297,21 @@ function NovaSaasInner() {
             Beautiful, production-ready SaaS UI components built with Tailwind
             CSS and shadcn/ui. Copy, paste, and ship faster.
           </p>
+
+          <div className="mb-10">
+            <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl font-mono text-sm ${isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-gray-200'} border shadow-lg`}>
+              <span className={theme.primarySolid + " bg-clip-text text-transparent font-bold"}>$</span>
+              <span className={theme.text}>npx novasaas init</span>
+              <button 
+                onClick={() => copy("npx novasaas init")}
+                className={`ml-4 p-1.5 rounded-md ${theme.hover} transition-colors`}
+                title="Copy command"
+              >
+                {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className={`w-4 h-4 ${theme.textMuted}`} />}
+              </button>
+            </div>
+          </div>
+
           <div className="flex items-center justify-center gap-4">
             <button
               onClick={() =>
