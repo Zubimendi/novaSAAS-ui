@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
   Copy,
@@ -200,21 +200,28 @@ const useCopyToClipboard = () => {
 };
 
 // Inner component that consumes the theme context
-function ComponentVaultInner() {
-  const { theme, currentTheme, setCurrentTheme, isDark, setIsDark } = useTheme();
+function NovaSaasInner() {
+  const { theme, currentTheme, setCurrentTheme, isDark, setIsDark } =
+    useTheme();
   const [showThemeMenu, setShowThemeMenu] = useState(false);
 
   return (
-    <div className={`min-h-screen ${theme.bg} ${theme.text} transition-colors duration-300`}>
+    <div
+      className={`min-h-screen ${theme.bg} ${theme.text} transition-colors duration-300`}
+    >
       {/* Navigation */}
-      <nav className={`sticky top-0 z-50 ${theme.surface} ${theme.border} border-b backdrop-blur-lg bg-opacity-90`}>
+      <nav
+        className={`sticky top-0 z-50 ${theme.surface} ${theme.border} border-b backdrop-blur-lg bg-opacity-90`}
+      >
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className={`p-2 rounded-lg bg-gradient-to-r ${theme.primary}`}>
+              <div
+                className={`p-2 rounded-lg bg-gradient-to-r ${theme.primary}`}
+              >
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold">ComponentVault</span>
+              <span className="text-xl font-bold">NovaSaas</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -226,7 +233,9 @@ function ComponentVaultInner() {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showThemeMenu && (
-                  <div className={`absolute top-full right-0 mt-2 w-48 p-2 rounded-lg ${theme.surface} ${theme.border} border shadow-xl`}>
+                  <div
+                    className={`absolute top-full right-0 mt-2 w-48 p-2 rounded-lg ${theme.surface} ${theme.border} border shadow-xl`}
+                  >
                     {Object.entries(themes).map(([key, t]) => (
                       <button
                         key={key}
@@ -247,7 +256,11 @@ function ComponentVaultInner() {
                 onClick={() => setIsDark(!isDark)}
                 className={`p-2 rounded-lg ${theme.hover} transition-colors`}
               >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {isDark ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
@@ -256,25 +269,57 @@ function ComponentVaultInner() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent ${isDark ? 'to-zinc-950' : 'to-gray-50'} pointer-events-none`} />
-        <div className={`absolute inset-0 ${theme.gradient} opacity-30 blur-3xl`} />
+        <div
+          className={`absolute inset-0 bg-gradient-to-b from-transparent via-transparent ${
+            isDark ? "to-zinc-950" : "to-gray-50"
+          } pointer-events-none`}
+        />
+        <div
+          className={`absolute inset-0 ${theme.gradient} opacity-30 blur-3xl`}
+        />
         <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${isDark ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'} backdrop-blur-sm border mb-6`}>
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${
+              isDark
+                ? "bg-white/5 border-white/10"
+                : "bg-black/5 border-black/10"
+            } backdrop-blur-sm border mb-6`}
+          >
             <Star className="w-4 h-4 text-amber-500" />
             <span className="text-sm">Premium SaaS Components</span>
           </div>
-          <h1 className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}>ComponentVault</h1>
-          <p className={`text-xl ${theme.textMuted} mb-8 max-w-2xl mx-auto`}>Beautiful, production-ready SaaS UI components built with Tailwind CSS and shadcn/ui. Copy, paste, and ship faster.</p>
+          <h1
+            className={`text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r ${theme.primary} bg-clip-text text-transparent`}
+          >
+            NovaSaas
+          </h1>
+          <p className={`text-xl ${theme.textMuted} mb-8 max-w-2xl mx-auto`}>
+            Beautiful, production-ready SaaS UI components built with Tailwind
+            CSS and shadcn/ui. Copy, paste, and ship faster.
+          </p>
           <div className="flex items-center justify-center gap-4">
-            <button 
-              onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("showcase")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className={`px-6 py-3 rounded-lg bg-gradient-to-r ${theme.primary} text-white font-medium hover:opacity-90 transition-all transform hover:scale-105`}
             >
               Browse Components
             </button>
-            <button 
-              onClick={() => window.open('https://github.com/Zubimendi/novaSAAS-ui', '_blank')}
-              className={`px-6 py-3 rounded-lg ${theme.surface} ${theme.border} border ${isDark ? 'hover:bg-white/5' : 'hover:bg-black/5'} transition-all`}
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/Zubimendi/novaSAAS-ui",
+                  "_blank"
+                )
+              }
+              className={`px-6 py-3 rounded-lg ${theme.surface} ${
+                theme.border
+              } border ${
+                isDark ? "hover:bg-white/5" : "hover:bg-black/5"
+              } transition-all`}
             >
               View on GitHub
             </button>
@@ -294,20 +339,44 @@ function ComponentVaultInner() {
 
       {/* Component Showcase */}
       <section id="showcase" className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className={`text-3xl font-bold mb-8 ${theme.text}`}>Component Showcase</h2>
+        <h2 className={`text-3xl font-bold mb-8 ${theme.text}`}>
+          Component Showcase
+        </h2>
         <div className="space-y-8">
-          <ComponentCard title="Stats Cards" description="Eye‑catching metric cards with trend indicators" code={componentCode.statsCard}>
+          <ComponentCard
+            title="Stats Cards"
+            description="Eye‑catching metric cards with trend indicators"
+            code={componentCode.statsCard}
+          >
             <div className="grid grid-cols-2 gap-4 w-full max-w-2xl">
-              <StatsCard title="Total Revenue" value="$45,231" change="+20.1%" trend="up" />
-              <StatsCard title="Active Users" value="2,345" change="+12.5%" trend="up" />
+              <StatsCard
+                title="Total Revenue"
+                value="$45,231"
+                change="+20.1%"
+                trend="up"
+              />
+              <StatsCard
+                title="Active Users"
+                value="2,345"
+                change="+12.5%"
+                trend="up"
+              />
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Login Form" description="Modern authentication with gradient buttons" code={componentCode.loginForm}>
+          <ComponentCard
+            title="Login Form"
+            description="Modern authentication with gradient buttons"
+            code={componentCode.loginForm}
+          >
             <LoginForm />
           </ComponentCard>
 
-          <ComponentCard title="Data Table" description="Clean, responsive table with hover effects" code={componentCode.dataTable}>
+          <ComponentCard
+            title="Data Table"
+            description="Clean, responsive table with hover effects"
+            code={componentCode.dataTable}
+          >
             <DataTable />
           </ComponentCard>
 
@@ -319,38 +388,72 @@ function ComponentVaultInner() {
             </div>
           </ComponentCard> */}
 
-          <ComponentCard title="Toast Notifications" description="Elegant notification toasts for user feedback" code={componentCode.toast}>
+          <ComponentCard
+            title="Toast Notifications"
+            description="Elegant notification toasts for user feedback"
+            code={componentCode.toast}
+          >
             <div className="space-y-3 w-full max-w-md">
-              <ToastNotification message="Order completed successfully" type="success" />
-              <ToastNotification message="Payment processing failed" type="error" />
+              <ToastNotification
+                message="Order completed successfully"
+                type="success"
+              />
+              <ToastNotification
+                message="Payment processing failed"
+                type="error"
+              />
               <ToastNotification message="New updates available" type="info" />
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Navigation Tabs" description="Smooth switching between content sections" code={componentCode.tabs}>
+          <ComponentCard
+            title="Navigation Tabs"
+            description="Smooth switching between content sections"
+            code={componentCode.tabs}
+          >
             <Tabs />
           </ComponentCard>
 
-          <ComponentCard title="Modal Dialog" description="Overlay for focused tasks and feedback" code={componentCode.modal}>
+          <ComponentCard
+            title="Modal Dialog"
+            description="Overlay for focused tasks and feedback"
+            code={componentCode.modal}
+          >
             <Modal />
           </ComponentCard>
 
-          <ComponentCard title="Sidebar Navigation" description="Vertical navigation for dashboard layouts" code={componentCode.sidebar}>
+          <ComponentCard
+            title="Sidebar Navigation"
+            description="Vertical navigation for dashboard layouts"
+            code={componentCode.sidebar}
+          >
             <Sidebar />
           </ComponentCard>
 
-          <ComponentCard title="Buttons" description="Interactive elements with multiple variants" code={componentCode.button}>
+          <ComponentCard
+            title="Buttons"
+            description="Interactive elements with multiple variants"
+            code={componentCode.button}
+          >
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" leftIcon={<Mail className="w-4 h-4" />}>Subscribe</Button>
+              <Button variant="primary" leftIcon={<Mail className="w-4 h-4" />}>
+                Subscribe
+              </Button>
               <Button variant="secondary">Cancel</Button>
               <Button variant="outline">View Details</Button>
               <Button variant="ghost">Skip</Button>
               <Button variant="danger">Delete</Button>
-              <Button variant="primary" isLoading>Loading</Button>
+              <Button variant="primary" isLoading>
+                Loading
+              </Button>
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Badges" description="Status indicators for labels and states" code={componentCode.badge}>
+          <ComponentCard
+            title="Badges"
+            description="Status indicators for labels and states"
+            code={componentCode.badge}
+          >
             <div className="flex flex-wrap gap-4">
               <Badge variant="default">Default</Badge>
               <Badge variant="success">Success</Badge>
@@ -360,37 +463,57 @@ function ComponentVaultInner() {
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Content Cards" description="Flexible containers for grouping content" code={componentCode.card}>
+          <ComponentCard
+            title="Content Cards"
+            description="Flexible containers for grouping content"
+            code={componentCode.card}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              <Card 
-                title="Project Alpha" 
+              <Card
+                title="Project Alpha"
                 description="A next-generation SaaS platform built for scale."
                 footer={
                   <div className="flex items-center justify-between w-full">
-                    <span className="text-sm opacity-60">Last updated 2h ago</span>
-                    <Button variant="ghost" size="sm">View Details</Button>
+                    <span className="text-sm opacity-60">
+                      Last updated 2h ago
+                    </span>
+                    <Button variant="ghost" size="sm">
+                      View Details
+                    </Button>
                   </div>
                 }
               >
-                <div className={`h-24 rounded-lg ${isDark ? 'bg-zinc-500/10 border-zinc-500/10' : 'bg-gray-500/10 border-gray-500/10'} border flex items-center justify-center`}>
-                  <span className="text-sm opacity-50">Content Placeholder</span>
+                <div
+                  className={`h-24 rounded-lg ${
+                    isDark
+                      ? "bg-zinc-500/10 border-zinc-500/10"
+                      : "bg-gray-500/10 border-gray-500/10"
+                  } border flex items-center justify-center`}
+                >
+                  <span className="text-sm opacity-50">
+                    Content Placeholder
+                  </span>
                 </div>
               </Card>
-              <Card 
-                title="Team Settings" 
+              <Card
+                title="Team Settings"
                 description="Manage your team members and permissions."
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-500 text-xs font-bold">JD</div>
+                      <div className="w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-500 text-xs font-bold">
+                        JD
+                      </div>
                       <span className="text-sm font-medium">John Doe</span>
                     </div>
                     <Badge variant="success">Admin</Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500 text-xs font-bold">JS</div>
+                      <div className="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-500 text-xs font-bold">
+                        JS
+                      </div>
                       <span className="text-sm font-medium">Jane Smith</span>
                     </div>
                     <Badge variant="default">Editor</Badge>
@@ -400,16 +523,40 @@ function ComponentVaultInner() {
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Alerts" description="Static feedback messages for user attention" code={componentCode.alert}>
+          <ComponentCard
+            title="Alerts"
+            description="Static feedback messages for user attention"
+            code={componentCode.alert}
+          >
             <div className="space-y-4 w-full max-w-2xl">
-              <Alert title="Payment Required" description="Your subscription has expired. Please renew to continue." variant="warning" />
-              <Alert title="Success!" description="Your changes have been saved successfully." variant="success" />
-              <Alert title="System Error" description="Something went wrong. Please try again later." variant="error" />
-              <Alert title="Note" description="Scheduled maintenance will occur tonight at 2 AM." variant="default" />
+              <Alert
+                title="Payment Required"
+                description="Your subscription has expired. Please renew to continue."
+                variant="warning"
+              />
+              <Alert
+                title="Success!"
+                description="Your changes have been saved successfully."
+                variant="success"
+              />
+              <Alert
+                title="System Error"
+                description="Something went wrong. Please try again later."
+                variant="error"
+              />
+              <Alert
+                title="Note"
+                description="Scheduled maintenance will occur tonight at 2 AM."
+                variant="default"
+              />
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Avatars" description="User profile images with status indicators" code={componentCode.avatar}>
+          <ComponentCard
+            title="Avatars"
+            description="User profile images with status indicators"
+            code={componentCode.avatar}
+          >
             <div className="flex items-center gap-6">
               <Avatar fallback="JD" status="online" size="lg" />
               <Avatar fallback="AB" status="busy" size="md" />
@@ -418,7 +565,11 @@ function ComponentVaultInner() {
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Switches" description="Toggle controls for boolean options" code={componentCode.switch}>
+          <ComponentCard
+            title="Switches"
+            description="Toggle controls for boolean options"
+            code={componentCode.switch}
+          >
             <div className="flex items-center gap-8">
               <div className="flex items-center gap-3">
                 <Switch checked={true} onCheckedChange={() => {}} />
@@ -435,7 +586,11 @@ function ComponentVaultInner() {
             </div>
           </ComponentCard>
 
-          <ComponentCard title="Progress Bars" description="Visual indicators for task completion" code={componentCode.progress}>
+          <ComponentCard
+            title="Progress Bars"
+            description="Visual indicators for task completion"
+            code={componentCode.progress}
+          >
             <div className="space-y-6 w-full max-w-md">
               <Progress value={75} showLabel />
               <Progress value={45} size="sm" />
@@ -450,12 +605,16 @@ function ComponentVaultInner() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <div className={`p-2 rounded-lg bg-gradient-to-r ${theme.primary}`}>
+              <div
+                className={`p-2 rounded-lg bg-gradient-to-r ${theme.primary}`}
+              >
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold">ComponentVault</span>
+              <span className="font-bold">NovaSaas</span>
             </div>
-            <p className={theme.textMuted}>Built with Next.js, Tailwind CSS, and shadcn/ui</p>
+            <p className={theme.textMuted}>
+              Built with Next.js, Tailwind CSS, and shadcn/ui
+            </p>
           </div>
         </div>
       </footer>
@@ -463,10 +622,10 @@ function ComponentVaultInner() {
   );
 }
 
-export default function ComponentVault() {
+export default function NovaSaas() {
   return (
     <ThemeProvider>
-      <ComponentVaultInner />
+      <NovaSaasInner />
     </ThemeProvider>
   );
 }
