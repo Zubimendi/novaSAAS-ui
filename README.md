@@ -70,7 +70,53 @@
    Navigate to http://localhost:3000
    ```
 
-### Using Components in Your Project
+---
+
+## 🛠️ CLI Tool (Recommended)
+
+The fastest way to add NovaSaas components to your project:
+
+### Initialize
+
+```bash
+npx novasaas init
+```
+
+This sets up your project with the required utilities and folder structure.
+
+### Add Components
+
+```bash
+# Add a single component
+npx novasaas add button
+
+# Add multiple components
+npx novasaas add button card badge avatar
+
+# Add all components at once
+npx novasaas add --all
+```
+
+### List Available Components
+
+```bash
+npx novasaas list
+```
+
+### CLI Options
+
+| Command | Description |
+|---------|-------------|
+| `npx novasaas init` | Initialize NovaSaas in your project |
+| `npx novasaas add <component>` | Add specific components |
+| `npx novasaas add --all` | Add all components |
+| `npx novasaas add --overwrite` | Overwrite existing files |
+| `npx novasaas add --path <dir>` | Custom output directory |
+| `npx novasaas list` | List all available components |
+
+---
+
+### Using Components Manually
 
 1. Browse the component showcase
 2. Click the **eye icon** (👁️) to view the component code

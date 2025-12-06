@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "novasaas",
+  "version": "1.0.0",
+  "components": [
+    {
+      "name": "button",
+      "category": "inputs",
+      "description": "Versatile button component with multiple variants and states",
+      "dependencies": ["lucide-react"],
+      "files": ["components/ui/button.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "badge",
+      "category": "data-display",
+      "description": "Status indicators for labels and states",
+      "dependencies": [],
+      "files": ["components/ui/badge.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "card",
+      "category": "layout",
+      "description": "Flexible containers for grouping content",
+      "dependencies": [],
+      "files": ["components/ui/card.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "alert",
+      "category": "feedback",
+      "description": "Static feedback messages for user attention",
+      "dependencies": ["lucide-react"],
+      "files": ["components/ui/alert.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "avatar",
+      "category": "data-display",
+      "description": "User profile images with status indicators",
+      "dependencies": [],
+      "files": ["components/ui/avatar.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "switch",
+      "category": "inputs",
+      "description": "Toggle controls for boolean options",
+      "dependencies": [],
+      "files": ["components/ui/switch.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "progress",
+      "category": "feedback",
+      "description": "Visual indicators for task completion",
+      "dependencies": [],
+      "files": ["components/ui/progress.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "tabs",
+      "category": "navigation",
+      "description": "Smooth switching between content sections",
+      "dependencies": [],
+      "files": ["components/ui/tabs.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "modal",
+      "category": "feedback",
+      "description": "Overlay for focused tasks and feedback",
+      "dependencies": ["lucide-react"],
+      "files": ["components/ui/modal.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "sidebar",
+      "category": "layout",
+      "description": "Vertical navigation for dashboard layouts",
+      "dependencies": ["lucide-react"],
+      "files": ["components/ui/sidebar.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "stats-card",
+      "category": "data-display",
+      "description": "Eye-catching metric cards with trend indicators",
+      "dependencies": ["lucide-react"],
+      "files": ["components/ui/stats-card.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "data-table",
+      "category": "data-display",
+      "description": "Clean, responsive table with hover effects",
+      "dependencies": [],
+      "files": ["components/ui/data-table.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "login-form",
+      "category": "forms",
+      "description": "Modern authentication with gradient buttons",
+      "dependencies": [],
+      "files": ["components/ui/login-form.tsx"],
+      "registryDependencies": []
+    },
+    {
+      "name": "toast",
+      "category": "feedback",
+      "description": "Elegant notification toasts for user feedback",
+      "dependencies": ["lucide-react"],
+      "files": ["components/ui/toast.tsx"],
+      "registryDependencies": []
+    }
+  ]
+}
